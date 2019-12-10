@@ -25,17 +25,20 @@ namespace WpfEventSetters
 			InitializeComponent();
 		}
 
-		private void Button_MouseEnter(object sender, RoutedEventArgs e)
+		private void ChangeValue_OnEnter(object sender, RoutedEventArgs e)
 		{
 			Button btn = (Button)sender;
 			int value;
 			if (int.TryParse((string)btn.Content, out value)){ //out value . out keyword allow to null value for value type variables
 					value++;
-					btn.Content.ToString();
+					btn.Content=value.ToString();
 				}
 				}
 
-				}
+		
+
+		
+	}
 				}
 
 
