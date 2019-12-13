@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WpfOdev_Hafta_10.Properties
+namespace WpfHafta10Odev.Properties
 {
 
 

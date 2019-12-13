@@ -1,44 +1,46 @@
 ﻿<Window
-	x:Class="WpfOdev_Hafta_10.MainWindow"
+	x:Class="WpfHafta10Odev.MainWindow"
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-	xmlns:local="clr-namespace:WpfOdev_Hafta_10"
+	xmlns:local="clr-namespace:WpfHafta10Odev"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	Title="MainWindow"
 	Width="800"
 	Height="450"
 	mc:Ignorable="d">
-	<!--<ControlTemplate x:Key="myButtonTemplate" TargetType="Button">
-<Border Padding="5" Background="Aqua" BorderBrush="Blue" CornerRadius="5"
-BorderThickness="5" HorizontalAlignment="Center">
-<ContentPresenter /> ← Display the content from the templated parent.
-</Border></ControlTemplate></Window.Resources>
-<StackPanel-->
+
 	<Window.Resources>
 		<!--#region Border-->
-		<!--
+
 		<ControlTemplate x:Key="myButtonTemplate" TargetType="Button">
 
 
 			<Border
-				Width="Auto"
-				Padding="5"
+				Width="150"
+				Height="150"
+				Margin="3"
+				Padding="3"
 				HorizontalAlignment="Center"
-				BorderBrush="#f44336"
-				BorderThickness="3"
+				VerticalAlignment="Center"
+				BorderBrush="#b2ebf2"
+				BorderThickness="2"
 				CornerRadius="3">
-				<Button>
-
-				<ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" />
-				</Button>
+				<Button
+					Width="150"
+					Height="100"
+					Margin="4"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center" />
+			
 			</Border>
 			<ControlTemplate.Triggers>
 				<Trigger Property="IsMouseOver" Value="True" />
+				
 			</ControlTemplate.Triggers>
 		</ControlTemplate>
-		
-		-->
+
+
 		<!--#endregion-->
 
 		<!--#region StackPanels-->
@@ -52,7 +54,7 @@ BorderThickness="5" HorizontalAlignment="Center">
 			<Setter Property="Foreground" Value="#01579b" />
 
 		</Style>
-		<!--  Button  -->
+		<!--  Button
 		<Style TargetType="Button">
 			<Setter Property="Button.Height" Value="40" />
 			<Setter Property="Button.Width" Value="Auto" />
@@ -61,6 +63,24 @@ BorderThickness="5" HorizontalAlignment="Center">
 
 			<Setter Property="Background" Value="#4fc3f7" />
 
+		</Style>
+		-->
+		<Style TargetType="{x:Type Button}">
+			<Style.Triggers>
+				<Trigger Property="IsMouseOver" Value="True">
+					<Setter Property="Button.Height" Value="40" />
+					<Setter Property="Button.Width" Value="Auto" />
+					<Setter Property="Button.FontSize" Value="16" />
+					<Setter Property="Background" Value="#4fc3f7" />
+					<Setter Property="Foreground" Value="Black" />
+				</Trigger>
+			</Style.Triggers>
+			<Setter Property="FontSize" Value="22" />
+			<Setter Property="Background" Value="Purple" />
+			<Setter Property="Foreground" Value="White" />
+			<Setter Property="Height" Value="50" />
+			<Setter Property="Width" Value="150" />
+			<Setter Property="RenderTransformOrigin" Value=".5,.5" />
 		</Style>
 		<Style TargetType="Image">
 			<Setter Property="Image.Width" Value="100" />
@@ -100,15 +120,20 @@ BorderThickness="5" HorizontalAlignment="Center">
 			<Label HorizontalAlignment="Right" Content="Ankara 5/11" />
 		</StackPanel>
 		<StackPanel Style="{StaticResource spLeft}">
-			<Button>
+			<Button Template="{StaticResource myButtonTemplate}">
 				<TextBlock>Ana Menü</TextBlock>
 			</Button>
-			<Button>
+			<Button Template="{StaticResource myButtonTemplate}">
 
 				<TextBlock Margin="10">Galeri</TextBlock>
 			</Button>
-			<Button>
+			<Button Template="{StaticResource myButtonTemplate}">
+
+
 				<TextBlock>Hakkında</TextBlock>
+
+
+
 			</Button>
 		</StackPanel>
 		<StackPanel Style="{StaticResource spRight}" />
